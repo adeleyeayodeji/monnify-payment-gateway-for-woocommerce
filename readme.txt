@@ -55,7 +55,7 @@ This plugin is meant to be used by merchants in Nigeria and Ghana.
 
 If you have suggestions or a new feature request, feel free to get in touch with me via the contact form on my website [here](http://adeleyeayodeji.com/)
 
-You can also follow me on Twitter! **[@tubiz](https://twitter.com/adeleyeayodeji_)**
+You can also follow me on Twitter! **[@adeleyeayodeji_](https://twitter.com/adeleyeayodeji_)**
 
 
 == Installation ==
