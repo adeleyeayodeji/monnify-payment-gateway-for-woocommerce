@@ -121,7 +121,7 @@ To configure the plugin, go to __WooCommerce > Settings__ from the left hand me
 
 == Changelog ==
 
-= 1.0.0 - February 3, 2016 =
+= 1.0.0 - December 24, 2020 =
 *   First release
 
 == Screenshots ==
