@@ -50,6 +50,7 @@ jQuery(function ($) {
      * Initialize.
      */
     init: function () {
+      // console.log(wc_monnify_params);
       // transactions_refrence;
       $("#monnify-payment-button").click(function (e) {
         e.preventDefault();

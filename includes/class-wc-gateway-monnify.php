@@ -302,11 +302,11 @@
                 if(isset($_GET["transactions_refrence"]) && $_GET["transactions_refrence"] != "undefined" && $_GET["transactions_refrence"] != ""){
                     //DO More
                      if(isset($_GET['monnify_id']) && urldecode( $_GET['monnify_id'] )){
-                            $order_id = urldecode( $_GET['monnify_id'] );
-                            $transactions_refrence = $_GET['transactions_refrence'];
+                            $order_id = sanitize_text_field(urldecode($_GET['monnify_id']));
+                            $transactions_refrence = sanitize_text_field($_GET['transactions_refrence']);
                             
                             if(!$order_id){
-                            $order_id = urldecode( $_GET['monnify_id'] );
+                            $order_id = sanitize_text_field(urldecode($_GET['monnify_id']));
                             }
                             //Get Order
                             $order = wc_get_order( $order_id );
@@ -509,7 +509,7 @@
                     return;
                 }
 
-                $order_key = urldecode( $_GET['key'] );
+                $order_key = sanitize_text_field(urldecode($_GET['key']));
                 $order_id  = absint( get_query_var( 'order-pay' ) );
 
                 $order = wc_get_order( $order_id );
