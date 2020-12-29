@@ -26,7 +26,7 @@ function payWithMonnify(
       window.location.href =
         urlVerify + "&transactions_refrence=" + response.transactionReference;
       //Disable button
-      jQuery("#monnify-payment-button").prop("disabled", true);
+      jQuery("#wc-monnify-payment-gateway-button").prop("disabled", true);
       jQuery("#cancel-btn").remove();
       jQuery("#yes-add").html(
         `<p class="woocommerce-notice woocommerce-notice--success woocommerce-thankyou-order-received">Please keep the page open while we process your order</p>`
@@ -52,7 +52,7 @@ jQuery(function ($) {
     init: function () {
       // console.log(wc_monnify_params);
       // transactions_refrence;
-      $("#monnify-payment-button").click(function (e) {
+      $("#wc-monnify-payment-gateway-button").click(function (e) {
         e.preventDefault();
         // console.log(data);
         let amount = Number(wc_monnify_params.amount),

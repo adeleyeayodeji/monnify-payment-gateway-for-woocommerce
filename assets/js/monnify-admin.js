@@ -53,7 +53,7 @@ jQuery(function ($) {
 
       $("#woocommerce_monnify_testmode").change();
 
-      $(".wc-monnify-payment-icons").select2({
+      $(".wc-wc-monnify-payment-gateway-icons").select2({
         templateResult: formatMonnifyPaymentIcons,
         templateSelection: formatMonnifyPaymentIconDisplay
       });

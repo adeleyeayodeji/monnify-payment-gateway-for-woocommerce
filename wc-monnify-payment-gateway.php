@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Plugin Name: Monnify Payment Gateway
+ * Plugin Name: Payment Gateway for Monnify on WooCommerce
  * Plugin URI: https://www.monnify.com/
  * Author: Adeleye Ayodeji
  * Author URI: http://adeleyeayodeji.com/
@@ -9,7 +9,7 @@
  * Version: 0.1.0
  * License: 0.1.0
  * License URL: http://www.gnu.org/licenses/gpl-2.0.txt
- * text-domain: monnify-payment
+ * text-domain: wc-monnify-payment-gateway
 */
     if ( ! defined( 'ABSPATH' ) ) {
         exit;
@@ -53,7 +53,7 @@
     echo '<div class="error">
         <p>' . sprintf( __( 'Monnify Payment test mode is still enabled, Click <strong><a
                     href="%s">here</a></strong> to
-            disable it when you want to start accepting live payment on your site.', 'monnify-payment' ), esc_url(
+            disable it when you want to start accepting live payment on your site.', 'wc-monnify-payment-gateway' ), esc_url(
             admin_url( 'admin.php?page=wc-settings&tab=checkout&section=monnify' ) ) ) . '</p>
     </div>';
     }
@@ -70,8 +70,8 @@
 
     $settings_link = array(
     'settings' => '<a href="' . admin_url( 'admin.php?page=wc-settings&tab=checkout&section=monnify' ) . '"
-        title="' . __( 'View Monnify WooCommerce Settings', 'monnify-payment' ) . '">' . __( 'Settings',
-        'monnify-payment' ) . '</a>',
+        title="' . __( 'View Monnify WooCommerce Settings', 'wc-monnify-payment-gateway' ) . '">' . __( 'Settings',
+        'wc-monnify-payment-gateway' ) . '</a>',
     );
 
     return array_merge( $settings_link, $links );

@@ -95,8 +95,8 @@
                 $this->id = "monnify";
                 // $this->icon = apply_filters("woocommerce_monnify_icon", plugins_url( 'assets/images/monnify.png', WC_MONNIFY_MAIN_FILE ));
                 $this->has_fields = true;
-                $this->method_title = __("Monnify Payment", "monnify-payment");
-                $this->method_description = sprintf( __( 'Monnify provide merchants with the tools and services needed to accept online payments from local and international customers using Mastercard, Visa, Verve Cards <a href="%1$s" target="_blank">Get your API keys</a>.', 'monnify-payment' ), 'https://app.monnify.com/dashboard' );
+                $this->method_title = __("Monnify Payment", "wc-monnify-payment-gateway");
+                $this->method_description = sprintf( __( 'Monnify provide merchants with the tools and services needed to accept online payments from local and international customers using Mastercard, Visa, Verve Cards <a href="%1$s" target="_blank">Get your API keys</a>.', 'wc-monnify-payment-gateway' ), 'https://app.monnify.com/dashboard' );
                 $this->supports = array(
                     'products',
                     'tokenization',
@@ -163,74 +163,74 @@
                 $form_fields = apply_filters("woo_ade_pay_fields", 
                     array(
                         "enabled" => array(
-                            "title" => __("Enable/Disable", "monnify-payment"),
+                            "title" => __("Enable/Disable", "wc-monnify-payment-gateway"),
                             "type" => "checkbox",
-                            "label" => __("Enable or Disable Ade Monnify Payment", "monnify-payment"),
+                            "label" => __("Enable or Disable Ade Monnify Payment", "wc-monnify-payment-gateway"),
                             "default" => "no"
                         ),
                         "title" => array(
-                            "title" => __("Title", "monnify-payment"),
+                            "title" => __("Title", "wc-monnify-payment-gateway"),
                             "type" => "text",
-                            "description" => __("This controls the payment method title which the user sees during checkout.", "monnify-payment"),
-                            "default" => __("Monnify Payment", "monnify-payment"),
+                            "description" => __("This controls the payment method title which the user sees during checkout.", "wc-monnify-payment-gateway"),
+                            "default" => __("Monnify Payment", "wc-monnify-payment-gateway"),
                             "desc_tip" => true
                         ),
                         "description" => array(
-                            "title" => __("Payment Description", "monnify-payment"),
+                            "title" => __("Payment Description", "wc-monnify-payment-gateway"),
                             "type" => "textarea",
-                            "description" => __("Add a new description", "monnify-payment"),
-                            "default" => __("Accept payments seamlessly via card, account transfers, etc. using Monnify payment gateway.", "monnify-payment"),
+                            "description" => __("Add a new description", "wc-monnify-payment-gateway"),
+                            "default" => __("Accept payments seamlessly via card, account transfers, etc. using Monnify payment gateway.", "wc-monnify-payment-gateway"),
                             "desc_tip" => true
                         ),
                         "instructions" => array(
-                            "title" => __("Instructions", "monnify-payment"),
+                            "title" => __("Instructions", "wc-monnify-payment-gateway"),
                             "type" => "textarea",
                             "description" => __("Instructions that will be added to the thank you page."),
-                            "default" => __("", "monnify-payment"),
+                            "default" => __("", "wc-monnify-payment-gateway"),
                             "desc_tip" => true
                         ),
                         'testmode'                         => array(
-                            'title'       => __( 'Test mode', 'monnify-payment' ),
-                            'label'       => __( 'Enable Test Mode', 'monnify-payment' ),
+                            'title'       => __( 'Test mode', 'wc-monnify-payment-gateway' ),
+                            'label'       => __( 'Enable Test Mode', 'wc-monnify-payment-gateway' ),
                             'type'        => 'checkbox',
-                            'description' => __( 'Test mode enables you to test payments before going live. <br />Once the LIVE MODE is enabled on your Monnify account uncheck this.', 'monnify-payment' ),
+                            'description' => __( 'Test mode enables you to test payments before going live. <br />Once the LIVE MODE is enabled on your Monnify account uncheck this.', 'wc-monnify-payment-gateway' ),
                             'default'     => 'yes',
                             'desc_tip'    => true,
                         ),
                         'test_secret_key'                  => array(
-                            'title'       => __( 'Test Secret Key', 'monnify-payment' ),
+                            'title'       => __( 'Test Secret Key', 'wc-monnify-payment-gateway' ),
                             'type'        => 'text',
-                            'description' => __( 'Enter your Test Secret Key here', 'monnify-payment' ),
+                            'description' => __( 'Enter your Test Secret Key here', 'wc-monnify-payment-gateway' ),
                             'default'     => '',
                         ),
                         'test_public_key'                  => array(
-                            'title'       => __( 'Test Public Key', 'monnify-payment' ),
+                            'title'       => __( 'Test Public Key', 'wc-monnify-payment-gateway' ),
                             'type'        => 'text',
-                            'description' => __( 'Enter your Test Public Key here.', 'monnify-payment' ),
+                            'description' => __( 'Enter your Test Public Key here.', 'wc-monnify-payment-gateway' ),
                             'default'     => '',
                         ),
                         'test_contracts_key'                  => array(
-                            'title'       => __( 'Test Contracts Key', 'monnify-payment' ),
+                            'title'       => __( 'Test Contracts Key', 'wc-monnify-payment-gateway' ),
                             'type'        => 'text',
-                            'description' => __( 'Enter your Test Contracts Key here.', 'monnify-payment' ),
+                            'description' => __( 'Enter your Test Contracts Key here.', 'wc-monnify-payment-gateway' ),
                             'default'     => '',
                         ),
                         'live_secret_key'                  => array(
-                            'title'       => __( 'Live Secret Key', 'monnify-payment' ),
+                            'title'       => __( 'Live Secret Key', 'wc-monnify-payment-gateway' ),
                             'type'        => 'text',
-                            'description' => __( 'Enter your Live Secret Key here.', 'monnify-payment' ),
+                            'description' => __( 'Enter your Live Secret Key here.', 'wc-monnify-payment-gateway' ),
                             'default'     => '',
                         ),
                         'live_public_key'                  => array(
-                            'title'       => __( 'Live Public Key', 'monnify-payment' ),
+                            'title'       => __( 'Live Public Key', 'wc-monnify-payment-gateway' ),
                             'type'        => 'text',
-                            'description' => __( 'Enter your Live Public Key here.', 'monnify-payment' ),
+                            'description' => __( 'Enter your Live Public Key here.', 'wc-monnify-payment-gateway' ),
                             'default'     => '',
                         ),
                           'live_contracts_key'                  => array(
-                            'title'       => __( 'Live Contracts Key', 'monnify-payment' ),
+                            'title'       => __( 'Live Contracts Key', 'wc-monnify-payment-gateway' ),
                             'type'        => 'text',
-                            'description' => __( 'Enter your Live Contracts Key here.', 'monnify-payment' ),
+                            'description' => __( 'Enter your Live Contracts Key here.', 'wc-monnify-payment-gateway' ),
                             'default'     => '',
                         ),
                     )
@@ -281,12 +281,12 @@
 
                 $order = wc_get_order( $order_id );
 
-                    echo '<div id="yes-add">' . __( 'Thank you for your order, please click the button below to pay with Monnify.', 'monnify-payment' ) . '</div>';
+                    echo '<div id="yes-add">' . __( 'Thank you for your order, please click the button below to pay with Monnify.', 'wc-monnify-payment-gateway' ) . '</div>';
 
-                    echo '<div id="monnify_form"><form id="order_review" method="post" action="' . WC()->api_request_url( 'WC_Monnify_Payment_Gateway' ) . '"></form><button class="button alt" id="monnify-payment-button">' . __( 'Pay Now', 'monnify-payment' ) . '</button>';
+                    echo '<div id="monnify_form"><form id="order_review" method="post" action="' . WC()->api_request_url( 'WC_Monnify_Payment_Gateway' ) . '"></form><button class="button alt" id="wc-monnify-payment-gateway-button">' . __( 'Pay Now', 'wc-monnify-payment-gateway' ) . '</button>';
 
                     if ( ! $this->remove_cancel_order_button ) {
-                        echo '  <a class="button cancel" id="cancel-btn" href="' . esc_url( $order->get_cancel_order_url() ) . '">' . __( 'Cancel order &amp; restore cart', 'monnify-payment' ) . '</a></div>';
+                        echo '  <a class="button cancel" id="cancel-btn" href="' . esc_url( $order->get_cancel_order_url() ) . '">' . __( 'Cancel order &amp; restore cart', 'wc-monnify-payment-gateway' ) . '</a></div>';
                     }
 
                 
@@ -348,7 +348,7 @@
                                             $order->payment_complete($transactions_refrence );
                                             $order->update_status( 'completed' );
                                             $order->add_order_note('Payment was successful on Monnify');
-                                            $order->add_order_note( sprintf( __( 'Payment via Monnify successful (Transaction Reference: %s)', 'monnify-payment' ),$transactions_refrence ) );
+                                            $order->add_order_note( sprintf( __( 'Payment via Monnify successful (Transaction Reference: %s)', 'wc-monnify-payment-gateway' ),$transactions_refrence ) );
                                             //Customer Note
                                             $customer_note  = 'Thank you for your order.<br>';
                                             $customer_note .= 'Your payment was successful, we are now <strong>processing</strong> your order.';
@@ -365,14 +365,14 @@
 
                                         update_post_meta( $order_id, '_transaction_id', $transactions_refrence );
 
-                                        $notice      = sprintf( __( 'Thank you for shopping with us.%1$sYour payment is currently having issues with verification and .%1$sYour order is currently on-hold.%2$sKindly contact us for more information regarding your order and payment status.', 'monnify-payment' ), '<br />', '<br />' );
+                                        $notice      = sprintf( __( 'Thank you for shopping with us.%1$sYour payment is currently having issues with verification and .%1$sYour order is currently on-hold.%2$sKindly contact us for more information regarding your order and payment status.', 'wc-monnify-payment-gateway' ), '<br />', '<br />' );
                                         $notice_type = 'notice';
 
                                         // Add Customer Order Note
                                         $order->add_order_note( $notice, 1 );
 
                                         // Add Admin Order Note
-                                        $admin_order_note = sprintf( __( '<strong>Look into this order</strong>%1$sThis order is currently on hold.%2$sReason: Payment can not be verified.%3$swhile the <strong>Monnify Transaction Reference:</strong> %4$s', 'monnify-payment' ), '<br />', '<br />', '<br />', $transactions_refrence );
+                                        $admin_order_note = sprintf( __( '<strong>Look into this order</strong>%1$sThis order is currently on hold.%2$sReason: Payment can not be verified.%3$swhile the <strong>Monnify Transaction Reference:</strong> %4$s', 'wc-monnify-payment-gateway' ), '<br />', '<br />', '<br />', $transactions_refrence );
                                         $order->add_order_note( $admin_order_note );
 
                                         function_exists( 'wc_reduce_stock_levels' ) ? wc_reduce_stock_levels( $order_id ) : $order->reduce_order_stock();
@@ -425,7 +425,7 @@
 
                 if ( ! in_array( get_woocommerce_currency(), apply_filters( 'woocommerce_monnify_supported_currencies', array( 'NGN', 'USD', 'ZAR', 'GHS' ) ) ) ) {
 
-                    $this->msg = sprintf( __( 'Monnify does not support your store currency. Kindly set it to either NGN (&#8358), GHS (&#x20b5;), USD (&#36;) or ZAR (R) <a href="%s">here</a>', 'monnify-payment' ), admin_url( 'admin.php?page=wc-settings&tab=general' ) );
+                    $this->msg = sprintf( __( 'Monnify does not support your store currency. Kindly set it to either NGN (&#8358), GHS (&#x20b5;), USD (&#36;) or ZAR (R) <a href="%s">here</a>', 'wc-monnify-payment-gateway' ), admin_url( 'admin.php?page=wc-settings&tab=general' ) );
 
                     return false;
 
@@ -467,7 +467,7 @@
 
                     // Check required fields.
                     if ( ! ( $this->public_key && $this->secret_key ) ) {
-                        echo '<div class="error"><p>' . sprintf( __( 'Please enter your Monnify merchant details <a href="%s">here</a> to be able to use the Monnify WooCommerce plugin.', 'monnify-payment' ), admin_url( 'admin.php?page=wc-settings&tab=checkout&section=monnify' ) ) . '</p></div>';
+                        echo '<div class="error"><p>' . sprintf( __( 'Please enter your Monnify merchant details <a href="%s">here</a> to be able to use the Monnify WooCommerce plugin.', 'wc-monnify-payment-gateway' ), admin_url( 'admin.php?page=wc-settings&tab=checkout&section=monnify' ) ) . '</p></div>';
                         return;
                     }
 

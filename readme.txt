@@ -1,4 +1,4 @@
-=== Monnify WooCommerce Payment Gateway ===
+=== Payment Gateway for Monnify on WooCommerce ===
 Contributors: Adeleye Ayodeji
 Donate link: http://adeleyeayodeji.com/
 Tags: Monnify, woocommerce, payment gateway, tubiz plugins, verve, ghana, nigeria, mastercard, visa
@@ -9,7 +9,7 @@ Requires PHP: 5.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Monnify WooCommerce Payment Gateway allows you to accept online payments from local and international customers
+Payment Gateway for Monnify on WooCommerce allows you to accept online payments from local and international customers
 
 == Description ==
 
@@ -19,9 +19,9 @@ Monnify is on a mission to deliver a safe and convenient payment experience for 
 
 To signup for a Monnify Merchant account visit their website by clicking [here](https://monnify.com)
 
-Monnify WooCommerce Payment Gateway allows you to accept payment on your WooCommerce store using Mastercard, Visa, Verve, bank accounts
+Payment Gateway for Monnify on WooCommerce allows you to accept payment on your WooCommerce store using Mastercard, Visa, Verve, bank accounts
 
-With this Monnify WooCommerce Payment Gateway plugin, you will be able to accept the following payment methods in your shop:
+With this Payment Gateway for Monnify on WooCommerce plugin, you will be able to accept the following payment methods in your shop:
 
 * __Mastercard__
 * __Visa__
@@ -63,8 +63,8 @@ You can also follow me on Twitter!! **[@adeleyeayodeji_](https://twitter.com/ade
 = Automatic Installation =
 * 	Login to your WordPress Admin area
 * 	Go to "Plugins > Add New" from the left hand menu
-* 	In the search box type __Monnify WooCommerce Payment Gateway__
-*	From the search result you will see __Monnify WooCommerce Payment Gateway__ click on __Install Now__ to install the plugin
+* 	In the search box type __Payment Gateway for Monnify on WooCommerce__
+*	From the search result you will see __Payment Gateway for Monnify on WooCommerce__ click on __Install Now__ to install the plugin
 *	A popup window will ask you to confirm your wish to install the Plugin.
 *	After installation, activate the plugin.
 * 	Open the settings page for WooCommerce and click the "Checkout" tab.
@@ -126,8 +126,8 @@ To configure the plugin, go to __WooCommerce > Settings__ from the left hand me
 
 == Screenshots ==
 
-1. Monnify WooCommerce Payment Gateway Setting Page
+1. Payment Gateway for Monnify on WooCommerce Setting Page
 
-2. Monnify WooCommerce Payment Gateway on the checkout page
+2. Payment Gateway for Monnify on WooCommerce on the checkout page
 
 3. Monnify inline payment page
