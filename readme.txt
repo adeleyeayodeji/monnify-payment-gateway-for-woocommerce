@@ -1,10 +1,10 @@
 === Payment Gateway for Monnify on WooCommerce ===
-Contributors: Adeleye Ayodeji
+Contributors: Adeleye Ayodeji, biggidroid
 Donate link: http://adeleyeayodeji.com/
-Tags: Monnify, woocommerce, payment gateway, tubiz plugins, verve, ghana, nigeria, mastercard, visa
+Tags: Monnify, woocommerce, payment gateway, adeleyeayodeji plugins, adeleyeayodeji, verve, ghana, nigeria, mastercard, visa
 Requires at least: 4.7
-Tested up to: 5.5
-Stable tag: 5.6.4
+Tested up to: 6.2
+Stable tag: 1.0.6
 Requires PHP: 5.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -120,6 +120,15 @@ To configure the plugin, go to __WooCommerce > Settings__ from the left hand me
 
 
 == Changelog ==
+
+= 1.0.6 =
+*	Updated Readme
+
+= 1.0.3 =
+*	Fixed a bug.
+
+= 1.0.3 - June 19, 2021 =
+*   Added option for quick checkout
 
 = 1.0.0 - December 24, 2020 =
 *   First release

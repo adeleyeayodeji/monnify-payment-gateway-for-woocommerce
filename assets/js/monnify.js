@@ -52,9 +52,7 @@ jQuery(function ($) {
     init: function () {
       // console.log(wc_monnify_params);
       // transactions_refrence;
-      $("#wc-monnify-payment-gateway-button").click(function (e) {
-        e.preventDefault();
-        // console.log(data);
+      let run_monnify = () => {
         let amount = Number(wc_monnify_params.amount),
           customerName =
             wc_monnify_params.first_name + " " + wc_monnify_params.last_name,
@@ -78,10 +76,16 @@ jQuery(function ($) {
           urlVerify,
           currency
         );
+      };
+      $("#wc-monnify-payment-gateway-button").click(function (e) {
+        e.preventDefault();
+        // console.log(data);
+        run_monnify();
       });
 
       //log
       // console.log(wc_monnify_params);
+      run_monnify();
     }
   };
 
