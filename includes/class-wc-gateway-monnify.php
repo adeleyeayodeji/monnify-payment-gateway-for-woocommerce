@@ -233,9 +233,20 @@
                             'description' => __( 'Enter your Live Contracts Key here.', 'wc-monnify-payment-gateway' ),
                             'default'     => '',
                         ),
+                        // Add new field for Order Status After Payment
+                        'order_status_after_payment' => array(
+                            'title'       => __('Order Status After Payment', 'wc-monnify-payment-gateway'),
+                            'type'        => 'select',
+                            'description' => __('Select the default order status after a successful payment.', 'wc-monnify-payment-gateway'),
+                            'default'     => 'processing',
+                            'options'     => array(
+                                'processing' => __('Processing', 'wc-monnify-payment-gateway'),
+                                'completed'  => __('Completed', 'wc-monnify-payment-gateway')
+                            ),
+                        ),
                     )
                 );
-
+                
                 $this->form_fields = $form_fields;
             }
 
@@ -294,7 +305,7 @@
             }
 
             	/**
-             * Verify Paystack payment.
+             * Verify Monnify payment.
              */
             public function monnify_verify_payment() {
 
@@ -346,7 +357,19 @@
                                         if($monnify_response_v->responseBody->paymentStatus === "PAID"){
                                             //CLear Order
                                             $order->payment_complete($transactions_refrence );
-                                            $order->update_status( 'completed' );
+                                            // $order->update_status( 'completed' );
+
+                                            // Retrieve the admin setting for order status after payment
+                                            $order_status_after_payment = $this->get_option('order_status_after_payment');
+
+                                            // Update order status based on the setting
+                                            if ($order_status_after_payment == 'completed') {
+                                                $order->update_status('completed', __('Payment received, your order is now complete.', 'wc-monnify-payment-gateway'));
+                                            } else {
+                                                $order->update_status('processing', __('Payment received, your order is currently being processed.', 'wc-monnify-payment-gateway'));
+                                            }
+
+
                                             $order->add_order_note('Payment was successful on Monnify');
                                             $order->add_order_note( sprintf( __( 'Payment via Monnify successful (Transaction Reference: %s)', 'wc-monnify-payment-gateway' ),$transactions_refrence ) );
                                             //Customer Note
