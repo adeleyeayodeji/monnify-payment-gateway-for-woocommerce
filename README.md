@@ -73,12 +73,12 @@ You can also follow me on Twitter! **[@adeleyeayodeji\_](https://twitter.com/ade
 
 = Manual Installation =
 
-1.                                                                   Download the plugin zip file
-2.                                                                   Login to your WordPress Admin. Click on "Plugins > Add New" from the left hand menu.
+1.                                                                    Download the plugin zip file
+2.                                                                    Login to your WordPress Admin. Click on "Plugins > Add New" from the left hand menu.
 3.  Click on the "Upload" option, then click "Choose File" to select the zip file from your computer. Once selected, press "OK" and press the "Install Now" button.
 4.  Activate the plugin.
-5.                                                                   Open the settings page for WooCommerce and click the "Checkout" tab.
-6.                                                                   Click on the __Monnify__ link from the available Checkout Options
+5.                                                                    Open the settings page for WooCommerce and click the "Checkout" tab.
+6.                                                                    Click on the __Monnify__ link from the available Checkout Options
 7.  Configure your **Monnify Payment Gateway** settings. See below for details.
 
 = Configure the plugin =
