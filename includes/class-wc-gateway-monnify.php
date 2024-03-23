@@ -527,7 +527,6 @@ if (class_exists("WC_Payment_Gateway")) {
          */
         public function is_available()
         {
-            return true;
             if ('yes' == $this->enabled) {
 
                 if (!($this->public_key && $this->secret_key)) {
