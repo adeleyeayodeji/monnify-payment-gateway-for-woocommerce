@@ -6,8 +6,8 @@
  * Author: Adeleye Ayodeji
  * Author URI: http://adeleyeayodeji.com/
  * Description: WooCommerce payment gateway for Monnify
- * Version: 1.0.7
- * License: 1.0.7
+ * Version: 1.0.8
+ * License: 1.0.8
  * License URL: http://www.gnu.org/licenses/gpl-2.0.txt
  * text-domain: wc-monnify-payment-gateway
  */
@@ -21,19 +21,23 @@ define("WC_MONNIFY_VERSION", "1.0.2");
 define('WC_MONNIFY_MAIN_FILE', __FILE__);
 define('WC_MONNIFY_URL', untrailingslashit(plugins_url('/', __FILE__)));
 
-add_action("plugins_loaded", "monnify_method_init", 11);
-//Notice user
-add_action('admin_notices', 'ade_wc_monnify_testmode_notice');
-//Admin URL
-add_filter('plugin_action_links_' . plugin_basename(__FILE__), 'ade_woo_monnify_plugin_action_links');
+add_action("plugins_loaded", "monnify_method_init", 999);
+
 //Methods
 function monnify_method_init()
 {
     //Init  class
     require_once dirname(__FILE__) . '/includes/class-wc-gateway-monnify.php';
+
+    //Notice user
+    add_action('admin_notices', 'ade_wc_monnify_testmode_notice');
+
+    //Admin URL
+    add_filter('plugin_action_links_' . plugin_basename(__FILE__), 'ade_woo_monnify_plugin_action_links');
+
+    add_filter("woocommerce_payment_gateways", "monnify_method_init_payment_gateway");
 }
 
-add_filter("woocommerce_payment_gateways", "monnify_method_init_payment_gateway");
 
 function monnify_method_init_payment_gateway($gateways)
 {
@@ -81,3 +85,38 @@ function ade_woo_monnify_plugin_action_links($links)
 
     return array_merge($settings_link, $links);
 }
+
+add_action(
+    'before_woocommerce_init',
+    function () {
+        if (class_exists(\Automattic\WooCommerce\Utilities\FeaturesUtil::class)) {
+            \Automattic\WooCommerce\Utilities\FeaturesUtil::declare_compatibility('custom_order_tables', __FILE__, true);
+        }
+    }
+);
+
+
+function monnify_gateway_block_support()
+{
+
+    if (!class_exists('Automattic\WooCommerce\Blocks\Payments\Integrations\AbstractPaymentMethodType')) {
+        return;
+    }
+
+    // here we're including our "gateway block support class"
+    require_once __DIR__ . '/includes/class-wc-gateway-monnify-blocks-support.php';
+
+    // registering our block support class
+    add_action(
+        'woocommerce_blocks_payment_method_type_registration',
+        function (Automattic\WooCommerce\Blocks\Payments\PaymentMethodRegistry $payment_method_registry) {
+            $payment_method_registry->register(new WC_Monnify_Payment_Gateway_Blocks_Support);
+        }
+    );
+}
+
+/**
+ *  Register our block support class when WooCommerce Blocks are loaded.
+ * 
+ */
+add_action('woocommerce_blocks_loaded', 'monnify_gateway_block_support');

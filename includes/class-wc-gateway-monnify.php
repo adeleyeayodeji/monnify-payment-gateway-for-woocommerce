@@ -86,6 +86,18 @@ if (class_exists("WC_Payment_Gateway")) {
          */
         public $apiURL;
 
+        /**
+         * saved_cards
+         * 
+         */
+        public $saved_cards;
+
+        /**
+         * remove_cancel_order_button
+         * 
+         */
+        public $remove_cancel_order_button;
+
 
         /**
          * Constructor
@@ -119,6 +131,10 @@ if (class_exists("WC_Payment_Gateway")) {
             $this->title       = $this->get_option('title');
             $this->description = $this->get_option('description');
             $this->enabled     = $this->get_option('enabled');
+
+            $this->saved_cards = false; //not applicable for now
+
+            $this->remove_cancel_order_button = false; //not applicable for now
 
             $this->test_public_key = $this->get_option('test_public_key');
             $this->test_secret_key = $this->get_option('test_secret_key');
@@ -248,6 +264,15 @@ if (class_exists("WC_Payment_Gateway")) {
             );
 
             $this->form_fields = $form_fields;
+        }
+
+        /**
+         * Get Paystack payment icon URL.
+         */
+        public function get_logo_url()
+        {
+            $url = WC_HTTPS::force_https_url(WC_MONNIFY_URL . '/assets/images/monnify.png');
+            return apply_filters('woocommerce_monnify_icon', $url, $this->id);
         }
 
         /**
@@ -447,7 +472,9 @@ if (class_exists("WC_Payment_Gateway")) {
 
             if (!in_array(get_woocommerce_currency(), apply_filters('woocommerce_monnify_supported_currencies', array('NGN', 'USD', 'ZAR', 'GHS')))) {
 
-                $this->msg = sprintf(__('Monnify does not support your store currency. Kindly set it to either NGN (&#8358), GHS (&#x20b5;), USD (&#36;) or ZAR (R) <a href="%s">here</a>', 'wc-monnify-payment-gateway'), admin_url('admin.php?page=wc-settings&tab=general'));
+                $msg = sprintf(__('Monnify does not support your store currency. Kindly set it to either NGN (&#8358), GHS (&#x20b5;), USD (&#36;) or ZAR (R) <a href="%s">here</a>', 'wc-monnify-payment-gateway'), admin_url('admin.php?page=wc-settings&tab=general'));
+
+                WC_Admin_Settings::add_error($msg);
 
                 return false;
             }
@@ -500,7 +527,7 @@ if (class_exists("WC_Payment_Gateway")) {
          */
         public function is_available()
         {
-
+            return true;
             if ('yes' == $this->enabled) {
 
                 if (!($this->public_key && $this->secret_key)) {
@@ -567,7 +594,6 @@ if (class_exists("WC_Payment_Gateway")) {
                     $monnify_params['email']        = $email;
                     $monnify_params['amount']       = $amount;
                     $monnify_params['txnref']       = $txnref;
-                    $monnify_params['pay_page']     = $this->payment_page;
                     $monnify_params['currency']     = $currency;
                     $monnify_params['bank_channel'] = 'true';
                     $monnify_params['card_channel'] = 'true';
