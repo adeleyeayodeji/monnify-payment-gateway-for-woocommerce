@@ -1,10 +1,10 @@
 === Payment Gateway for Monnify on WooCommerce ===
 Contributors: Adeleye Ayodeji
 Donate link: http://adeleyeayodeji.com/
-Tags: Monnify, woocommerce, payment gateway, tubiz plugins, verve, ghana, nigeria, mastercard, visa
+Tags: Monnify, woocommerce, payment gateway, adeleye plugins, verve, ghana, nigeria, mastercard, visa
 Requires at least: 4.7
-Tested up to: 6.0
-Stable tag: 1.0.5
+Tested up to: 6.4
+Stable tag: 1.0.8
 Requires PHP: 5.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -73,12 +73,12 @@ You can also follow me on Twitter! **[@adeleyeayodeji\_](https://twitter.com/ade
 
 = Manual Installation =
 
-1.                                         Download the plugin zip file
-2.                                         Login to your WordPress Admin. Click on "Plugins > Add New" from the left hand menu.
+1.                                                                   Download the plugin zip file
+2.                                                                   Login to your WordPress Admin. Click on "Plugins > Add New" from the left hand menu.
 3.  Click on the "Upload" option, then click "Choose File" to select the zip file from your computer. Once selected, press "OK" and press the "Install Now" button.
 4.  Activate the plugin.
-5.                                         Open the settings page for WooCommerce and click the "Checkout" tab.
-6.                                         Click on the __Monnify__ link from the available Checkout Options
+5.                                                                   Open the settings page for WooCommerce and click the "Checkout" tab.
+6.                                                                   Click on the __Monnify__ link from the available Checkout Options
 7.  Configure your **Monnify Payment Gateway** settings. See below for details.
 
 = Configure the plugin =
@@ -114,6 +114,10 @@ To configure the plugin, go to **WooCommerce > Settings** from the left hand me
 - If a subscription has a free trial and no signup-fee, automatic renewal is not possible because the order total will be 0, after the free trial the subscription will be put on-hold. The customer will have to login to his account to renew his subscription. If a MasterCard or Visa card is used to renew subsequent renewals will be automatic throughout the duration of the subscription, if a Verve card is used automatic renewal isn't possible.
 
 == Changelog ==
+
+= 1.0.8 - March 23, 2024 =
+
+- Added support for WooCommerce block checkout
 
 = 1.0.5
 Added support for wordpress v6+
