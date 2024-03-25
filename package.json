@@ -1,8 +1,8 @@
 {
-  "name": "terminal-africa",
+  "name": "wc-monnify-payment-gateway",
   "version": "1.11.5",
-  "description": "Terminal Africa Shipping Method Plugin for WooCommerce",
-  "author": "Terminal Africa",
+  "description": "Payment Gateway for Monnify on WooCommerce allows you to accept online payments from local and international customers",
+  "author": "Adeleye Ayodeji",
   "license": "GPL-2.0-or-later",
   "scripts": {
     "build": "wp-scripts build src/block.js --output-path=assets/js/block",
