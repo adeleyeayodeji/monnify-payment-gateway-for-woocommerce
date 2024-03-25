@@ -4,7 +4,7 @@ Donate link: http://adeleyeayodeji.com/
 Tags: Monnify, woocommerce, payment gateway, adeleyeayodeji plugins, adeleyeayodeji, verve, ghana, nigeria, mastercard, visa
 Requires at least: 4.7
 Tested up to: 6.4
-Stable tag: 1.0.7
+Stable tag: 1.0.9
 Requires PHP: 5.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -120,6 +120,9 @@ To configure the plugin, go to __WooCommerce > Settings__ from the left hand me
 
 
 == Changelog ==
+
+= 1.0.9 =
+*	Added support for woocommerce block element
 
 = 1.0.7 =
 *	Added option for checkout completion status

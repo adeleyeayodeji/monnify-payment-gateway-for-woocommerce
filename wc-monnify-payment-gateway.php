@@ -6,8 +6,8 @@
  * Author: Adeleye Ayodeji
  * Author URI: http://adeleyeayodeji.com/
  * Description: WooCommerce payment gateway for Monnify
- * Version: 1.0.8
- * License: 1.0.8
+ * Version: 1.0.9
+ * License: 1.0.9
  * License URL: http://www.gnu.org/licenses/gpl-2.0.txt
  * text-domain: wc-monnify-payment-gateway
  */
